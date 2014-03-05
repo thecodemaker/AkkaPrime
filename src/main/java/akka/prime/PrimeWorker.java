@@ -1,17 +1,17 @@
 package akka.prime;
 
 import akka.actor.UntypedActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.prime.message.NumberRangeMessage;
 import akka.prime.message.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Created by thecodemaker on 3/3/14.
  */
 public class PrimeWorker extends UntypedActor {
 
-    private final Logger logger = LoggerFactory.getLogger(PrimeWorker.class);
+    private final LoggingAdapter logger = Logging.getLogger(getContext().system(), this);
 
     @Override
     public void onReceive(Object message) throws Exception {

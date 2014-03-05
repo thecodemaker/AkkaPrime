@@ -21,11 +21,11 @@ public class PrimeCalculator {
         ActorSystem actorSystem = ActorSystem.create( "primeCalculator" );
 
         // Create our listener
-        final ActorRef primeListener = actorSystem.actorOf( new Props( PrimeListener.class ), "primeListener" );
+        final ActorRef primeListener = actorSystem.actorOf(Props.create(PrimeListener.class), "primeListener" );
 
         // Create the PrimeMaster: we need to define an UntypedActorFactory so that we can control
         // how PrimeMaster instances are created (pass in the number of workers and listener reference
-        ActorRef primeMaster = actorSystem.actorOf( new Props( new UntypedActorFactory() {
+        ActorRef primeMaster = actorSystem.actorOf(new Props( new UntypedActorFactory() {
             public UntypedActor create() {
                 return new PrimeMaster( 10, primeListener );
             }

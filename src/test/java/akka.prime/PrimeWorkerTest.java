@@ -21,9 +21,9 @@ import static org.junit.Assert.assertEquals;
 /**
  * User: thecodemaker
  * Date: 3/7/14
- * Time: 1:10 PM
  */
-public class PrimeListenerTest {
+
+public class PrimeWorkerTest {
 
     private static ActorSystem system;
     private static ActorRef primeWorker;

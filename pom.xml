@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
          
-        <com.typesafe.akka.version>2.2.0</com>         
+        <com.typesafe.akka.version>2.2.0</com.typesafe.akka.version>
         <org.slf4j.version>1.7.6</org.slf4j.version>
         <ch.qos.logback.version>1.1.1</ch.qos.logback.version>
         <junit.version>4.11</junit.version>
@@ -78,6 +78,12 @@
             <version>${com.typesafe.akka.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-testkit_2.10</artifactId>
+            <version>${com.typesafe.akka.version}</version>
+        </dependency>
+
         <!--
                The slf4j API for logging
            -->
@@ -106,7 +112,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
